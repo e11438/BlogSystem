@@ -5,6 +5,8 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
+  
+  
   <servlet>
     <servlet-name>addPost</servlet-name>
     <servlet-class>user.post.AddaBlog</servlet-class>
@@ -14,4 +16,24 @@
     <servlet-name>addPost</servlet-name>
     <url-pattern>/userFiles/addPost</url-pattern>
   </servlet-mapping>
+  
+  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>users web resource</web-resource-name>
+  		<url-pattern>/userFiles/*</url-pattern>
+  		<url-pattern>/userFiles/new_post.html</url-pattern>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<role-name>users</role-name>
+  	</auth-constraint>
+  	
+  </security-constraint>
+  
+  <login-config>
+  	<auth-method>BASIC</auth-method>
+  </login-config>
+  
+  		<security-role> 
+                <role-name>users</role-name> 
+        </security-role>
 </web-app>
