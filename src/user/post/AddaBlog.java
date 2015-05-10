@@ -37,40 +37,7 @@ public class AddaBlog extends HttpServlet {
 		    
 		    file.writeFile(title,msg);
 		    
-		    //playersList.add(req.getParameter("post"));
-		  /*  
-		    out.println("<html>");
-		    out.println("<head>");
-		    out.println("<title>Posts</title>");
-		    out.println("</head>");
-		    out.println("<body>");
-		   out.println("<table>");
-		   out.println("<tr>");
-		   out.println("<td>");
-		    out.println("Title:");
-		    out.println("</td>");
-		    out.println("<td>");
-		    out.println(title);
-		    out.println("</td>");
-		    out.println("</tr>");
-		    out.println("<br>");
-		    out.println("<tr>");
-		    out.println("<td>");
-		    out.println("</td>");
-		    out.println("<td>");
-		    out.println("<textarea rows='4' cols='50'>");
-		    out.println(msg);
-		    out.println("</textarea>");
-		    out.println("</td>");
-		    out.println("</tr>");
-		    out.println("</table>");
-		    
-		    out.println("<br>");
-		    out.println("<br/>");
-		    out.println("Date: "+date);
-		    out.println("</body>");
-		    out.println("</html>");*/
-		    
+		  		    
 		    request.getSession().setAttribute("date", date);
 		    request.getSession().setAttribute("msg", msg);
 		    request.getSession().setAttribute("title", title);

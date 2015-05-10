@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
 public class ReadFile {
-	
+	static HashMap<String,String> res;
 	public static String readFile(String args) {
 		 
 		BufferedReader br = null;
@@ -21,7 +21,7 @@ public class ReadFile {
 			br = new BufferedReader(new FileReader("C:\\Users\\e11438\\Documents\\SOFTWARES\\apache-tomcat-8.0.21\\wtpwebapps\\StarBloggers\\Files\\"+args));
  
 			while ((sCurrentLine = br.readLine()) != null) {
-				res+=("\n"+sCurrentLine);
+				res+=("<br>"+sCurrentLine);
 				//System.out.println(sCurrentLine);
 			}
  
@@ -39,15 +39,16 @@ public class ReadFile {
  
 	}
 	
+	//method to initialize 'res' HashMap and return it
 	public static HashMap<String,String> firstTen(){
 		
-		HashMap<String,String> res = new HashMap<String,String>();
+		res = new HashMap<String,String>();
 		String str = readFile("postDetails.txt");
-		String[] lines = str.split("\n");
+		String[] lines = str.split("<br>");
 		if(lines.length<10){
 			//can't start from 0
 			for(int i=1;i<lines.length;i++){
-				String[] subLine = lines[i].trim().split(",");
+				String[] subLine = lines[i].trim().split("%%");
 				if(subLine.length>1){
 					res.put(subLine[0], subLine[1]);	
 				}else{
@@ -57,7 +58,7 @@ public class ReadFile {
 		}else{
 			//can't start from 0
 			for(int i=1;i<10;i++){
-				String[] subLine = lines[i].trim().split(",");
+				String[] subLine = lines[i].trim().split("%%");
 				res.put(subLine[0], subLine[1]);
 				if(subLine.length>1){
 					res.put(subLine[0], subLine[1]);	

@@ -5,7 +5,9 @@
 <head>
 		<script type="text/javascript" src="load.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Insert title here</title>
+		<title>StarBloggers</title>
+		<%="<link rel=\"stylesheet\" type=\"text/css\" href=\"screen.css\"  />" %>
+		
 	</head>
 	<body>
 	
@@ -14,17 +16,14 @@
 		
 		<form action="userFiles/logged.html" method="POST">    
         	<input type="submit" value="Login">
-    	 </form> &nbsp
+    	 </form> 
 		<a href="./adminPanel.html">Admin Panel</a>
-		<div id="blog1"></div>
-		<div id="blog2"></div>
-		
-		
-		<%String search="asdadsfdsf"; %>
-		<a href="Search.jsp?item=<%=search%>">go link</a>
+		<br>
 		<br>
 		<br>
 		
+		
+				
 		<%String str =ReadFile.readFile("postDetails.txt");		
 			if(str.length()>5){
 				HashMap<String,String> posts = ReadFile.firstTen();
@@ -33,7 +32,17 @@
 				
 				 while (it.hasNext()) {
 				        Map.Entry pair = (Map.Entry)it.next();
-				        out.println(pair.getKey()+" - "+pair.getValue()+"<br>");
+				        
+		%>
+		
+		<h3><a href="Search.jsp?item=<%=pair.getValue()%>" style="text-decoration: none"><%=pair.getKey()%></a></h3>
+		<br>
+		
+		
+		<br>
+		
+				        
+		<%
 				        it.remove(); // avoids a ConcurrentModificationException
 				    }
 			

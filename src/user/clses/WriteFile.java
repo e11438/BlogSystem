@@ -49,7 +49,7 @@ public class WriteFile{
 			 try {
 				 
 				    FileWriter fw = new FileWriter(dir,true); //the true will append the new data
-				    fw.write(fileName+","+title);//appends the string to the file
+				    fw.write(title+"%%"+fileName);//appends the string to the file
 				    fw.write("\r\n");
 				    fw.close();
 			} catch (IOException e) {
