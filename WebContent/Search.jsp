@@ -18,6 +18,11 @@ String str =ReadFile.readFile("\\Posts\\"+fileName+".txt");
 </FORM>
 <hr>
 <h4>Comments</h4>
+<%
+String comments =ReadFile.readFile("\\Comments\\"+fileName+".txt");
+//if(!comments.equals(null))
+out.println(comments);
+%>
 
 <form action="addComment" method="POST">
      Make a Comment: <br><br>
