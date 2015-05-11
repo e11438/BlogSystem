@@ -55,9 +55,32 @@ public class WriteFile{
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			    
+			}	 
+		}
 		
-		 
+		public static void writeComment(String str1, String str2,String t1) {
+			
+			String dirName = "C:\\Users\\e11438\\Documents\\SOFTWARES\\apache-tomcat-8.0.21\\wtpwebapps\\StarBloggers\\Files\\Comments";
+			File dir = new File (dirName);
+			try {
+				String fileName = t1+".txt";
+				File actualFile = new File (dir, fileName);
+				 //create the file
+		      FileWriter writer = new FileWriter(actualFile,true); 
+		      
+		      //save the title of the post with file name in postDetails.txt 
+		     // writeFileName(t1, str1);
+		      
+		      // Writes the content to the file
+		      writer.write(str1);
+		      writer.write("\r\n");
+		      writer.write("\r\n");
+		      writer.write(str2); 
+		      writer.flush();
+		      writer.close();
+			}catch(IOException e) {
+				System.out.println(e);
+			}
+			
 		}
 }

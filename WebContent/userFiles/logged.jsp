@@ -28,10 +28,17 @@ for(int i=0;i<cmList.size();i++){
 %>	
 	<%=title %><br>
 	Commented by : <%=name %><br>
-	<%=comment %><br>
-	
-	<h5><a href="authComment?fileName=<%=fileName%>&name=<%=name %>&comment=<%=comment %>" style="text-decoration: none">Add comment</a></h5>
+	<%=comment %><br>	
 		<br>
+		
+		
+		<form action="authComment" method="POST">     	
+         <input type="hidden" name="fileName" value="<%=fileName%>">
+         <input type="hidden" name="name" value="<%=name%>">
+          <input type="hidden" name="comment" value="<%=comment%>">
+          <input type="hidden" name="title" value="<%=title%>">
+        <input type="submit" value="Add">
+     </form> 
 		<hr>
 <%	
 }

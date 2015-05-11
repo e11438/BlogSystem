@@ -16,6 +16,10 @@
     <servlet-name>storeComments</servlet-name>
     <servlet-class>user.post.StoreComments</servlet-class>
   </servlet>
+  <servlet>
+   <servlet-name>authComments</servlet-name>
+    <servlet-class>user.post.AuthComment</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>addPost</servlet-name>
     <url-pattern>/userFiles/addPost</url-pattern>
@@ -28,6 +32,10 @@
   <servlet-mapping>
     <servlet-name>storeComments</servlet-name>
     <url-pattern>/addComment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>authComments</servlet-name>
+    <url-pattern>/userFiles/authComment</url-pattern>
   </servlet-mapping>
   <security-constraint>
     <web-resource-collection>
