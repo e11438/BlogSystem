@@ -9,7 +9,7 @@ import java.util.HashMap;
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
 public class ReadFile {
-	static HashMap<String,String> res;
+	static HashMap<String,String> res = new HashMap<String,String>();
 	public static String readFile(String args) {
 		 
 		BufferedReader br = null;
@@ -53,17 +53,6 @@ public class ReadFile {
 					res.put(subLine[0], subLine[1]);	
 				}else{
 					res.put("fake small", subLine.toString());
-				}
-			}
-		}else{
-			//can't start from 0
-			for(int i=1;i<10;i++){
-				String[] subLine = lines[i].trim().split("%%");
-				res.put(subLine[0], subLine[1]);
-				if(subLine.length>1){
-					res.put(subLine[0], subLine[1]);	
-				}else{
-					res.put("fake big", subLine.toString());
 				}
 			}
 		}

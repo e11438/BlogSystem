@@ -7,12 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%String title =(String)session.getAttribute("title");   %>
+<%String title =(String)session.getAttribute("title");   
+	String content =(String)session.getAttribute("content");   
+%>
 
 <form action="updatePost" method="POST">
      Title: 
      	<input type="text" size="100" name="title" value="<%=title%>"><br><br>
-         <textarea rows="4" cols="50" name="post">
+         <textarea rows="4" cols="50" name="post"><%=content %>
          </textarea> <br><br>
         <input type="submit" value="Post">
      </form> 
