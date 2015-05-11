@@ -14,7 +14,7 @@
 	
 		<h1>Star Bloggers</h1>
 		
-		<form action="userFiles/logged.html" method="POST">    
+		<form action="userFiles/logged.jsp" method="POST">    
         	<input type="submit" value="Login">
     	 </form> 
 		<a href="./adminPanel.html">Admin Panel</a>
@@ -35,7 +35,7 @@
 				        
 		%>
 		
-		<h3><a href="Search.jsp?item=<%=pair.getValue()%>" style="text-decoration: none"><%=pair.getKey()%></a></h3>
+		<h3><a href="Search.jsp?item=<%=pair.getValue()%>&title=<%=pair.getKey() %>" style="text-decoration: none"><%=pair.getKey()%></a></h3>
 		<br>
 		
 		

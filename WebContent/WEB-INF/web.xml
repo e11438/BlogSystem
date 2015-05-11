@@ -8,9 +8,13 @@
     <servlet-name>addPost</servlet-name>
     <servlet-class>user.post.AddaBlog</servlet-class>
   </servlet>
-   <servlet>
+  <servlet>
     <servlet-name>editPost</servlet-name>
     <servlet-class>user.post.EditBlog</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>storeComments</servlet-name>
+    <servlet-class>user.post.StoreComments</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>addPost</servlet-name>
@@ -20,6 +24,10 @@
   <servlet-mapping>
     <servlet-name>editPost</servlet-name>
     <url-pattern>/userFiles/editBlog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>storeComments</servlet-name>
+    <url-pattern>/addComment</url-pattern>
   </servlet-mapping>
   <security-constraint>
     <web-resource-collection>

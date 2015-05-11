@@ -8,13 +8,27 @@
 </head>
 <body>
 
-<%String goods=request.getParameter("item");
-String str =ReadFile.readFile("\\Posts\\"+goods+".txt");
+<%String fileName=request.getParameter("item");
+String title=request.getParameter("title");
+String str =ReadFile.readFile("\\Posts\\"+fileName+".txt");
 %>
 <%=str  %>
 
 <FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"><br>
 </FORM>
+<hr>
+<h4>Comments</h4>
+
+<form action="addComment" method="POST">
+     Make a Comment: <br><br>
+     Your Name:
+     	<input type="text" size="50" name="name"><br><br>
+         <textarea rows="4" cols="50" name="comment">         
+         </textarea> <br><br>
+         <input type="hidden" name="fileName" value="<%=fileName%>">
+         <input type="hidden" name="title" value="<%=title%>">
+        <input type="submit" value="Post">
+     </form> 
 
 </body>
 </html>
